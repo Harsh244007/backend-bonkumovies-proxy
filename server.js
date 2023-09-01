@@ -6,8 +6,6 @@ const port = 5000;
 app.use(express.json());
 
 app.get("/api/:id", async (req, res) => {
-  res.setHeader("Content-Type", "text/html");
-  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   const formData = new FormData();
   formData.append("post", req.params.id);
   formData.append("action", "doo_player_ajax");
