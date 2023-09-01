@@ -2,8 +2,9 @@ const express = require("express");
 const axios = require("axios");
 const app = express();
 const port = 5000;
-
+const cors = require('cors')
 app.use(express.json());
+app.use(cors())
 
 app.get("/api/harsh/:id", async (req, res) => {
   res.setHeader("Content-Type", "text/html");
