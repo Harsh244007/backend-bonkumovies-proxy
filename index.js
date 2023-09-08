@@ -5,7 +5,9 @@ const port = 5000;
 const cors = require("cors");
 app.use(express.json());
 app.use(cors());
-
+app.get("/",async (req,res)=>{
+  res.status(200).send("Working fine")
+})
 app.get("/api/harsh/tv/:id", async (req, res) => {
   res.setHeader("Content-Type", "text/html");
   res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
