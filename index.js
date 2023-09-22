@@ -95,7 +95,7 @@ app.get("/api/harsh/:id", async (req, res) => {
   }
 });
 app.post("/api/post",(req,res)=>{
-  res.send({"message":sucess}).status(201)
+  res.send({"message":"sucess"}).status(201)
 })
 
 app.listen(port, () => {
