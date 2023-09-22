@@ -94,6 +94,9 @@ app.get("/api/harsh/:id", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+app.post("/api/post",(req,res)=>{
+  res.send({"message":sucess}).status(201)
+})
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
