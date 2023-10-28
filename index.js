@@ -94,6 +94,25 @@ app.get("/api/harsh/:id", async (req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+app.get("/api/harsh/:movies/:id", async (req, res) => {
+  try {
+    const response = await axios.get(
+      `https://autoembed.to/${req.params.movies}/imdb/${req.params.id}`,
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
+    );
+
+    const data = response.data; // Get the response data directly
+
+    res.send(data); // Send the external API response back to your frontend
+  } catch (error) {
+    console.error("Error:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
 app.post("/api/post",(req,res)=>{
   res.send({"message":"sucess"}).status(201)
 })
